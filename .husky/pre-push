@@ -1,0 +1,5 @@
+#!/bin/sh
+echo ""
+echo "🐺 [Husky] 🛡️ Running pre-push build check..."
+echo ""
+npm run build
