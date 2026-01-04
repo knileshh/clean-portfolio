@@ -97,7 +97,7 @@ export default function Home() {
                   <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-technical-900 leading-none">
                     Nilesh Kumar
                   </h1>
-                  <BadgeCheck className="text-white fill-blue-500 flex-shrink-0 translate-y-1" size={28} />
+                  <BadgeCheck className="text-white fill-blue-500 flex-shrink-0 translate-y-1" size={28} strokeWidth={1.5} />
                 </div>
 
                 <p className="font-mono text-base text-technical-500">
@@ -109,7 +109,7 @@ export default function Home() {
                   <a
                     href="/resume.pdf"
                     target="_blank"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-technical-900 hover:bg-technical-800 text-white text-sm font-medium rounded-md transition-colors shadow-sm"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-neutral-950 hover:bg-neutral-800 text-white text-sm font-medium rounded-md transition-colors shadow-sm"
                   >
                     <FileText size={18} />
                     <span>Resume</span>
