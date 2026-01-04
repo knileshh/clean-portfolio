@@ -1,65 +1,186 @@
-import Image from "next/image";
+"use client";
+
+import { Mail, Github, ArrowUpRight } from "lucide-react";
+import { Navbar } from "@/components/navbar";
+import { SectionHeading } from "@/components/section-heading";
+import { ExperienceCard } from "@/components/experience-card";
+import { ProjectCard } from "@/components/project-card";
+import { SkillChart } from "@/components/skill-chart";
+import { VisitorCounter } from "@/components/visitor-counter";
+import { CalModalButton } from "@/components/cal-modal-button";
+
+const experiences = [
+  {
+    company: "KalkiNi",
+    role: "Backend Developer Intern",
+    period: "Present",
+    description: [
+      "Designing scalable microservices architecture using Node.js.",
+      "Optimizing database queries for high-volume data ingestion.",
+      "Implementing secure authentication flows."
+    ]
+  },
+  {
+    company: "KeyNCoder",
+    role: "Full Stack Developer",
+    period: "2023 - 2024",
+    description: [
+      "Contributed to frontend architecture using React and Express.",
+      "Optimized CI/CD pipelines reducing deployment time by 20%.",
+      "Built RESTful APIs consumed by mobile and web clients."
+    ]
+  }
+];
+
+const projects = [
+  {
+    title: "HireNeoAI",
+    description: "AI-powered recruitment platform streamlining candidate screening. Leverages Google Cloud for scalability and Docker for containerization.",
+    tags: ["Next.js", "TS", "Node.js", "GCP", "Docker"],
+    links: { demo: "#", repo: "#" }
+  },
+  {
+    title: "About-me-API",
+    description: "Developer-centric portfolio generator exposing personal data via JSON APIs. Built with clean architecture and type safety.",
+    tags: ["Next.js", "ShadCN", "Tailwind", "REST"],
+    links: { demo: "#", repo: "#" }
+  },
+  {
+    title: "Autonomous Trading Agents",
+    description: "Financial trading bot using vector embeddings for market sentiment analysis with advanced retrieval mechanisms.",
+    tags: ["Python", "Faiss", "Vector DB", "LLMs"],
+    links: { repo: "#" }
+  }
+];
 
 export default function Home() {
+  const copyEmail = () => {
+    navigator.clipboard.writeText("hey@knileshh.com");
+    alert("Email copied to clipboard");
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="min-h-screen flex justify-center bg-technical-50 font-sans text-technical-900 p-4 md:p-8 transition-colors duration-300">
+
+      {/* Main Container - Flex row to allow sidebars to stretch */}
+      <div className="w-full max-w-[900px] bg-card shadow-sm flex relative z-10 border border-technical-300 transition-colors duration-300">
+
+        {/* Left Hatched Frame - Full Height */}
+        <div className="w-4 md:w-6 bg-hatch-pattern border-r border-technical-300 shrink-0 hidden sm:block"></div>
+
+        {/* Content Area */}
+        <div className="flex-1 bg-card min-w-0 flex flex-col transition-colors duration-300">
+
+          {/* Navigation Bar */}
+          <Navbar />
+
+          {/* Header */}
+          <header className="px-6 py-6 md:px-12 md:py-10 border-b border-technical-200">
+            <div className="flex justify-between items-start mb-8">
+              <div>
+                <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-technical-900 mb-1">
+                  Nilesh Kumar
+                </h1>
+                <p className="font-mono text-sm text-technical-500">
+                  Backend Engineer &amp; API Architect
+                </p>
+              </div>
+              <div className="hidden md:block text-right">
+                <div className="font-mono text-xs text-technical-400 uppercase tracking-widest mb-1">Status</div>
+                <div className="flex items-center gap-2 text-xs font-bold text-green-700 dark:text-green-400 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 px-2 py-1 rounded-sm">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                  </span>
+                  AVAILABLE FOR HIRE
+                </div>
+              </div>
+            </div>
+
+            <p className="text-technical-600 leading-relaxed max-w-xl text-sm md:text-base">
+              Final year MCA student at VIT Vellore. Building scalable systems with Node.js and TypeScript.
+              Obsessed with clean code, microservices, and high-performance APIs.
+            </p>
+
+            <div className="mt-6 flex gap-4 text-sm font-medium">
+              <button onClick={copyEmail} className="flex items-center gap-2 text-technical-900 hover:text-technical-600 transition-colors underline decoration-technical-300 decoration-1 underline-offset-4">
+                <Mail size={14} /> hey@knileshh.com
+              </button>
+              <a href="https://github.com/knileshh" target="_blank" className="flex items-center gap-2 text-technical-900 hover:text-technical-600 transition-colors underline decoration-technical-300 decoration-1 underline-offset-4">
+                <Github size={14} /> github.com/knileshh
+              </a>
+            </div>
+          </header>
+
+          <main className="px-6 py-8 md:px-12 md:py-12">
+
+            {/* 01 - Experience */}
+            <section id="experience" className="mb-16 scroll-mt-24">
+              <SectionHeading number="01" title="Experience" />
+              <div className="space-y-2">
+                {experiences.map((exp, index) => (
+                  <ExperienceCard key={index} data={exp} />
+                ))}
+              </div>
+            </section>
+
+            {/* 02 - Projects */}
+            <section id="projects" className="mb-16 scroll-mt-24">
+              <SectionHeading number="02" title="Projects" />
+              <div className="grid grid-cols-1 gap-4">
+                {projects.map((proj, index) => (
+                  <ProjectCard key={index} data={proj} />
+                ))}
+              </div>
+            </section>
+
+            {/* 03 - Skills */}
+            <section id="skills" className="mb-16 scroll-mt-24">
+              <SectionHeading number="03" title="Skill" />
+              <SkillChart />
+            </section>
+
+            {/* 04 - Contact */}
+            <section id="contact" className="mb-8 scroll-mt-24">
+              <SectionHeading number="04" title="Contact" />
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <CalModalButton calLink="knileshh" />
+
+                <a href="mailto:hey@knileshh.com" className="block group">
+                  <div className="h-full border border-technical-200 bg-card p-6 transition-all hover:border-technical-900 hover:shadow-sm">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="p-2 bg-technical-100 rounded-sm text-technical-800">
+                        <Mail size={20} />
+                      </div>
+                      <ArrowUpRight size={16} className="text-technical-400 group-hover:text-technical-900" />
+                    </div>
+                    <h4 className="font-bold text-technical-900">Send Email</h4>
+                    <p className="text-sm text-technical-500 mt-1">hey@knileshh.com</p>
+                  </div>
+                </a>
+              </div>
+            </section>
+
+            <footer className="pt-12 mt-12 border-t border-technical-200 flex flex-col md:flex-row justify-between items-end md:items-center gap-4">
+              <div>
+                <p className="font-mono text-xs text-technical-400">
+                  © 2026 Nilesh Kumar.
+                </p>
+                <p className="font-mono text-[10px] text-technical-300 mt-1">
+                  Built with Next.js &amp; Tailwind.
+                </p>
+              </div>
+              <VisitorCounter />
+            </footer>
+
+          </main>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+
+        {/* Right Hatched Frame - Full Height */}
+        <div className="w-4 md:w-6 bg-hatch-pattern border-l border-technical-300 shrink-0 hidden sm:block"></div>
+      </div>
+
     </div>
   );
 }
