@@ -1,5 +1,15 @@
 #!/bin/sh
 echo ""
+echo "🐺 [Husky] 🔐 Running Gitleaks secret scan..."
+echo ""
+gitleaks protect --staged --verbose
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "❌ Secrets detected! Commit blocked."
+  exit 1
+fi
+
+echo ""
 echo "🐺 [Husky] 🛡️  Running TypeScript Type Check..."
 echo ""
 npx tsc --noEmit
