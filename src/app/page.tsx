@@ -76,10 +76,12 @@ export default function Home() {
 
           {/* Header */}
           <header className="px-6 py-8 md:px-12 md:py-16 border-b border-technical-200">
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">
+            {/* Profile Section - Grid Layout */}
+            {/* Profile Section - Grid Layout */}
+            <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-center">
 
-              {/* Avatar (Left) */}
-              <div className="shrink-0 group">
+              {/* Left: Avatar */}
+              <div className="group shrink-0 mx-auto md:mx-0">
                 <div className="relative w-40 h-40 md:w-56 md:h-56 rounded-full border-[6px] border-technical-100 shadow-sm overflow-hidden bg-technical-100 ring-1 ring-technical-200">
                   <img
                     src="/avatar.png"
@@ -89,40 +91,40 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Info (Right) */}
-              <div className="flex-1 text-center md:text-left pt-2">
-                <div className="flex items-center justify-center md:justify-start gap-2 mb-1">
-                  <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-technical-900">
+              {/* Right: Details (Vertically Centered) */}
+              <div className="text-center md:text-left space-y-3">
+                <div className="flex items-center justify-center md:justify-start gap-1.5">
+                  <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-technical-900 leading-none">
                     Nilesh Kumar
                   </h1>
-                  <BadgeCheck className="text-white fill-blue-500" size={24} />
+                  <BadgeCheck className="text-white fill-blue-500 flex-shrink-0 translate-y-1" size={28} />
                 </div>
 
-                <p className="font-mono text-sm text-technical-500 mb-5">
+                <p className="font-mono text-base text-technical-500">
                   Backend Engineer
                 </p>
 
                 {/* Social Icons & Resume Row */}
-                <div className="flex items-center justify-center md:justify-start gap-4">
+                <div className="flex items-center justify-center md:justify-start gap-4 pt-1">
                   <a
                     href="/resume.pdf"
                     target="_blank"
-                    className="inline-flex items-center gap-2 px-5 py-2 bg-technical-900 hover:bg-technical-800 text-white text-sm font-medium rounded-md transition-colors shadow-sm"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-technical-900 hover:bg-technical-800 text-white text-sm font-medium rounded-md transition-colors shadow-sm"
                   >
-                    <FileText size={16} />
+                    <FileText size={18} />
                     <span>Resume</span>
                   </a>
 
-                  <div className="h-5 w-px bg-technical-200 mx-1"></div>
+                  <div className="h-6 w-px bg-technical-200 mx-2"></div>
 
                   <button onClick={copyEmail} className="text-technical-400 hover:text-technical-900 transition-colors" title="Email Me">
-                    <Mail size={22} />
+                    <Mail size={24} />
                   </button>
                   <a href="https://github.com/knileshh" target="_blank" className="text-technical-400 hover:text-technical-900 transition-colors" title="GitHub">
-                    <Github size={22} />
+                    <Github size={24} />
                   </a>
                   <a href="https://linkedin.com/in/knileshh" target="_blank" className="text-technical-400 hover:text-technical-900 transition-colors" title="LinkedIn">
-                    <Linkedin size={22} />
+                    <Linkedin size={24} />
                   </a>
                 </div>
               </div>
