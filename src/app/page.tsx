@@ -136,6 +136,17 @@ export default function Home() {
                   </a>
                 </div>
               </div>
+
+              {/* Right: Profile Picture */}
+              <div className="hidden md:block shrink-0">
+                <div className="w-28 h-28 rounded-sm border-2 border-technical-200 bg-technical-100 overflow-hidden relative group">
+                  <img
+                    src="/avatar.png"
+                    alt="Nilesh Kumar"
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                  />
+                </div>
+              </div>
             </div>
           </header>
 
