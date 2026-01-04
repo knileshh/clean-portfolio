@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Github, ArrowUpRight } from "lucide-react";
+import { Mail, Github, Linkedin, FileText, ArrowUpRight } from "lucide-react";
 import { Navbar } from "@/components/navbar";
 import { SectionHeading } from "@/components/section-heading";
 import { ExperienceCard } from "@/components/experience-card";
@@ -76,39 +76,66 @@ export default function Home() {
 
           {/* Header */}
           <header className="px-6 py-6 md:px-12 md:py-10 border-b border-technical-200">
-            <div className="flex justify-between items-start mb-8">
-              <div>
-                <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-technical-900 mb-1">
-                  Nilesh Kumar
-                </h1>
-                <p className="font-mono text-sm text-technical-500">
-                  Backend Engineer &amp; API Architect
+            <div className="flex justify-between items-start gap-6">
+              {/* Left: Name, Role, Status, Links */}
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-2">
+                  <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-technical-900">
+                    Nilesh Kumar
+                  </h1>
+                  {/* Open to Work Badge */}
+                  <div className="flex items-center gap-1.5 text-[10px] font-medium text-green-700 dark:text-green-400 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 px-2 py-0.5 rounded-full">
+                    <span className="relative flex h-1.5 w-1.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
+                    </span>
+                    Open to Work
+                  </div>
+                </div>
+
+                <p className="font-mono text-xs text-technical-500 mb-4">
+                  Backend Engineer
                 </p>
-              </div>
-              <div className="hidden md:block text-right">
-                <div className="font-mono text-xs text-technical-400 uppercase tracking-widest mb-1">Status</div>
-                <div className="flex items-center gap-2 text-xs font-bold text-green-700 dark:text-green-400 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 px-2 py-1 rounded-sm">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                  </span>
-                  AVAILABLE FOR HIRE
+
+                <p className="text-technical-600 leading-relaxed max-w-md text-xs md:text-sm mb-4">
+                  Final year MCA student at VIT Vellore. Building scalable systems with Node.js and TypeScript.
+                </p>
+
+                {/* Links Row - Icons only with tooltips on larger screens */}
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={copyEmail}
+                    className="p-2 text-technical-600 hover:text-technical-900 hover:bg-technical-100 rounded-md transition-colors"
+                    title="hey@knileshh.com"
+                  >
+                    <Mail size={16} />
+                  </button>
+                  <a
+                    href="https://github.com/knileshh"
+                    target="_blank"
+                    className="p-2 text-technical-600 hover:text-technical-900 hover:bg-technical-100 rounded-md transition-colors"
+                    title="GitHub"
+                  >
+                    <Github size={16} />
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/knileshh"
+                    target="_blank"
+                    className="p-2 text-technical-600 hover:text-technical-900 hover:bg-technical-100 rounded-md transition-colors"
+                    title="LinkedIn"
+                  >
+                    <Linkedin size={16} />
+                  </a>
+                  <a
+                    href="/resume.pdf"
+                    target="_blank"
+                    className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-technical-900 bg-technical-100 hover:bg-technical-200 rounded-md transition-colors"
+                  >
+                    <FileText size={14} />
+                    Resume
+                  </a>
                 </div>
               </div>
-            </div>
-
-            <p className="text-technical-600 leading-relaxed max-w-xl text-sm md:text-base">
-              Final year MCA student at VIT Vellore. Building scalable systems with Node.js and TypeScript.
-              Obsessed with clean code, microservices, and high-performance APIs.
-            </p>
-
-            <div className="mt-6 flex gap-4 text-sm font-medium">
-              <button onClick={copyEmail} className="flex items-center gap-2 text-technical-900 hover:text-technical-600 transition-colors underline decoration-technical-300 decoration-1 underline-offset-4">
-                <Mail size={14} /> hey@knileshh.com
-              </button>
-              <a href="https://github.com/knileshh" target="_blank" className="flex items-center gap-2 text-technical-900 hover:text-technical-600 transition-colors underline decoration-technical-300 decoration-1 underline-offset-4">
-                <Github size={14} /> github.com/knileshh
-              </a>
             </div>
           </header>
 
