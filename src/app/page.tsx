@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Github, Linkedin, FileText, ArrowUpRight } from "lucide-react";
+import { Mail, Github, Linkedin, FileText, ArrowUpRight, BadgeCheck } from "lucide-react";
 import { Navbar } from "@/components/navbar";
 import { SectionHeading } from "@/components/section-heading";
 import { ExperienceCard } from "@/components/experience-card";
@@ -75,78 +75,65 @@ export default function Home() {
           <Navbar />
 
           {/* Header */}
-          <header className="px-6 py-6 md:px-12 md:py-10 border-b border-technical-200">
-            <div className="flex justify-between items-start gap-6">
-              {/* Left: Name, Role, Status, Links */}
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-2">
-                  <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-technical-900">
-                    Nilesh Kumar
-                  </h1>
-                  {/* Open to Work Badge */}
-                  <div className="flex items-center gap-1.5 text-[10px] font-medium text-green-700 dark:text-green-400 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 px-2 py-0.5 rounded-full">
-                    <span className="relative flex h-1.5 w-1.5">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
-                    </span>
-                    Open to Work
-                  </div>
-                </div>
+          <header className="px-6 py-8 md:px-12 md:py-16 border-b border-technical-200">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">
 
-                <p className="font-mono text-xs text-technical-500 mb-4">
-                  Backend Engineer
-                </p>
-
-                <p className="text-technical-600 leading-relaxed max-w-md text-xs md:text-sm mb-4">
-                  Final year MCA student at VIT Vellore. Building scalable systems with Node.js and TypeScript.
-                </p>
-
-                {/* Links Row - Icons only with tooltips on larger screens */}
-                <div className="flex items-center gap-3">
-                  <button
-                    onClick={copyEmail}
-                    className="p-2 text-technical-600 hover:text-technical-900 hover:bg-technical-100 rounded-md transition-colors"
-                    title="hey@knileshh.com"
-                  >
-                    <Mail size={16} />
-                  </button>
-                  <a
-                    href="https://github.com/knileshh"
-                    target="_blank"
-                    className="p-2 text-technical-600 hover:text-technical-900 hover:bg-technical-100 rounded-md transition-colors"
-                    title="GitHub"
-                  >
-                    <Github size={16} />
-                  </a>
-                  <a
-                    href="https://linkedin.com/in/knileshh"
-                    target="_blank"
-                    className="p-2 text-technical-600 hover:text-technical-900 hover:bg-technical-100 rounded-md transition-colors"
-                    title="LinkedIn"
-                  >
-                    <Linkedin size={16} />
-                  </a>
-                  <a
-                    href="/resume.pdf"
-                    target="_blank"
-                    className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-technical-900 bg-technical-100 hover:bg-technical-200 rounded-md transition-colors"
-                  >
-                    <FileText size={14} />
-                    Resume
-                  </a>
-                </div>
-              </div>
-
-              {/* Right: Profile Picture */}
-              <div className="hidden md:block shrink-0">
-                <div className="w-28 h-28 rounded-sm border-2 border-technical-200 bg-technical-100 overflow-hidden relative group">
+              {/* Avatar (Left) */}
+              <div className="shrink-0 group">
+                <div className="relative w-40 h-40 md:w-56 md:h-56 rounded-full border-[6px] border-technical-100 shadow-sm overflow-hidden bg-technical-100 ring-1 ring-technical-200">
                   <img
                     src="/avatar.png"
                     alt="Nilesh Kumar"
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out"
                   />
                 </div>
               </div>
+
+              {/* Info (Right) */}
+              <div className="flex-1 text-center md:text-left pt-2">
+                <div className="flex items-center justify-center md:justify-start gap-2 mb-1">
+                  <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-technical-900">
+                    Nilesh Kumar
+                  </h1>
+                  <BadgeCheck className="text-white fill-blue-500" size={24} />
+                </div>
+
+                <p className="font-mono text-sm text-technical-500 mb-5">
+                  Backend Engineer
+                </p>
+
+                {/* Social Icons & Resume Row */}
+                <div className="flex items-center justify-center md:justify-start gap-4">
+                  <a
+                    href="/resume.pdf"
+                    target="_blank"
+                    className="inline-flex items-center gap-2 px-5 py-2 bg-technical-900 hover:bg-technical-800 text-white text-sm font-medium rounded-md transition-colors shadow-sm"
+                  >
+                    <FileText size={16} />
+                    <span>Resume</span>
+                  </a>
+
+                  <div className="h-5 w-px bg-technical-200 mx-1"></div>
+
+                  <button onClick={copyEmail} className="text-technical-400 hover:text-technical-900 transition-colors" title="Email Me">
+                    <Mail size={22} />
+                  </button>
+                  <a href="https://github.com/knileshh" target="_blank" className="text-technical-400 hover:text-technical-900 transition-colors" title="GitHub">
+                    <Github size={22} />
+                  </a>
+                  <a href="https://linkedin.com/in/knileshh" target="_blank" className="text-technical-400 hover:text-technical-900 transition-colors" title="LinkedIn">
+                    <Linkedin size={22} />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* About Section */}
+            <div className="mt-8 max-w-2xl mx-auto md:mx-0 text-center md:text-left">
+              <h2 className="text-xl font-bold text-technical-900 mb-2">About</h2>
+              <p className="text-technical-600 font-sans text-base leading-snug max-w-xl">
+                Building scalable systems with Node.js and TypeScript. Obsessed with clean code, microservices, and high-performance APIs. Final year MCA student at VIT Vellore.
+              </p>
             </div>
           </header>
 
