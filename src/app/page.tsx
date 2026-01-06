@@ -96,7 +96,7 @@ export default function Home() {
                 <div className="flex items-center justify-center md:justify-start relative">
                   <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-technical-900 leading-none relative">
                     Nilesh Kumar
-                    <span className="absolute left-full top-1/2 -translate-y-1/2 ml-1.5 md:static md:translate-y-0 md:inline-block md:ml-2 align-middle">
+                    <span className="absolute left-full top-1/2 -translate-y-1/2 mt-1 ml-1.5 md:static md:translate-y-0 md:mt-0 md:inline-block md:ml-2 align-middle">
                       <BadgeCheck className="text-white fill-blue-500 flex-shrink-0" size={28} strokeWidth={1.5} />
                     </span>
                   </h1>
