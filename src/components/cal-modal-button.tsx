@@ -29,16 +29,26 @@ export function CalModalButton({ calLink }: CalModalButtonProps) {
     };
 
     return (
-        <button onClick={openCalModal} className="block group w-full text-left">
-            <div className="h-full border border-technical-200 bg-card p-6 transition-all hover:border-technical-900 hover:shadow-sm">
-                <div className="flex items-center justify-between mb-4">
-                    <div className="p-2 bg-technical-100 rounded-sm text-technical-800">
+        <button type="button" onClick={openCalModal} className="block group w-full text-left relative cursor-pointer focus:outline-none focus:ring-2 focus:ring-technical-900 focus:ring-offset-2 rounded-sm">
+            {/* Hatched Shadow Layer */}
+            <div className="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-[linear-gradient(45deg,#000000_25%,transparent_25%,transparent_50%,#000000_50%,#000000_75%,transparent_75%,transparent)] dark:bg-[linear-gradient(45deg,#ffffff_25%,transparent_25%,transparent_50%,#ffffff_50%,#ffffff_75%,transparent_75%,transparent)] bg-[length:4px_4px] opacity-0 transition-opacity duration-300 group-hover:opacity-20 rounded-sm" />
+
+            {/* Main Card */}
+            <div className="h-full relative border border-technical-300 dark:border-technical-400 p-6 transition-all duration-300 hover:border-technical-900 dark:hover:border-technical-800 group-hover:-translate-y-1 group-hover:-translate-x-1 bg-white dark:bg-neutral-950">
+                <div className="absolute top-0 right-0 p-6">
+                    <ArrowUpRight size={20} className="text-technical-400 transition-transform duration-300 group-hover:text-technical-900 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </div>
+
+                <div className="flex flex-col h-full justify-between">
+                    <div className="p-2 w-fit bg-technical-100 rounded-sm text-technical-800 mb-4">
                         <Calendar size={20} />
                     </div>
-                    <ArrowUpRight size={16} className="text-technical-400 group-hover:text-technical-900" />
+
+                    <div>
+                        <h4 className="font-bold text-lg text-technical-900 mb-1">Book a Call</h4>
+                        <p className="text-sm text-technical-500">Available for new projects</p>
+                    </div>
                 </div>
-                <h4 className="font-bold text-technical-900">Book a Call</h4>
-                <p className="text-sm text-technical-500 mt-1">Schedule a meeting via Cal.com</p>
             </div>
         </button>
     );

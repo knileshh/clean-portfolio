@@ -18,7 +18,18 @@ export function ProjectCard({ data }: ProjectCardProps) {
                             Project // {data.tags[0]}
                         </span>
                         <h3 className="text-xl font-bold text-technical-900 group-hover:underline decoration-1 underline-offset-4">
-                            {data.title}
+                            {data.links?.demo || data.links?.repo ? (
+                                <a
+                                    href={data.links.demo || data.links.repo}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="transition-colors"
+                                >
+                                    {data.title}
+                                </a>
+                            ) : (
+                                data.title
+                            )}
                         </h3>
                     </div>
 

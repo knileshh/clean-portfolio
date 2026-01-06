@@ -21,7 +21,7 @@ export function Navbar() {
                         className="font-mono text-xs font-medium text-technical-500 uppercase tracking-wider hover:text-technical-900 transition-colors relative group"
                     >
                         {link.label}
-                        <span className="absolute -bottom-4 left-0 w-full h-0.5 bg-technical-900 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                        <span className="absolute -bottom-1 left-0 w-full h-[1.5px] bg-technical-900 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
                     </a>
                 ))}
             </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Github, Linkedin, FileText, ArrowUpRight, BadgeCheck } from "lucide-react";
+import { Mail, Github, Linkedin, FileText, ArrowUpRight, BadgeCheck, Download } from "lucide-react";
 import { Navbar } from "@/components/navbar";
 import { SectionHeading } from "@/components/section-heading";
 import { ExperienceCard } from "@/components/experience-card";
@@ -38,13 +38,13 @@ const projects = [
     title: "HireNeoAI",
     description: "AI-powered recruitment platform streamlining candidate screening. Leverages Google Cloud for scalability and Docker for containerization.",
     tags: ["Next.js", "TS", "Node.js", "GCP", "Docker"],
-    links: { demo: "#", repo: "#" }
+    links: { demo: "https://hireneo-ai.xyz", repo: "#" }
   },
   {
     title: "About-me-API",
     description: "Developer-centric portfolio generator exposing personal data via JSON APIs. Built with clean architecture and type safety.",
     tags: ["Next.js", "ShadCN", "Tailwind", "REST"],
-    links: { demo: "#", repo: "#" }
+    links: { demo: "https://www.about-me-api.xyz", repo: "#" }
   },
   {
     title: "Autonomous Trading Agents",
@@ -108,9 +108,8 @@ export default function Home() {
                   <a
                     href="/resume.pdf"
                     target="_blank"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-neutral-950 hover:bg-neutral-800 text-white text-sm font-medium rounded-md transition-colors shadow-sm"
+                    className="group relative inline-flex items-center px-4 py-2 border border-technical-200 bg-white text-technical-600 font-medium text-xs uppercase tracking-wider hover:border-technical-900 hover:text-technical-900 transition-all duration-300"
                   >
-                    <FileText size={18} />
                     <span>Resume</span>
                   </a>
 
@@ -132,7 +131,7 @@ export default function Home() {
             {/* About Section */}
             <div className="mt-8 text-center md:text-left">
               <h2 className="text-xl font-bold text-technical-900 mb-2">About</h2>
-              <p className="text-technical-600 font-sans text-base leading-snug">
+              <p className="text-technical-600 font-mono text-sm leading-relaxed">
                 I build robust backend systems and AI infrastructure with a genuine passion for quality. I love the complex heavy lifting of engineering and take pride in delivering end-to-end solutions that are precise, powerful, and built to endure.
               </p>
             </div>
@@ -173,16 +172,26 @@ export default function Home() {
               <div className="grid md:grid-cols-2 gap-4">
                 <CalModalButton calLink="knileshh" />
 
-                <a href="mailto:hey@knileshh.com" className="block group">
-                  <div className="h-full border border-technical-200 bg-card p-6 transition-all hover:border-technical-900 hover:shadow-sm">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="p-2 bg-technical-100 rounded-sm text-technical-800">
+                <a href="mailto:hey@knileshh.com" className="block group relative cursor-pointer focus:outline-none focus:ring-2 focus:ring-technical-900 focus:ring-offset-2 rounded-sm">
+                  {/* Hatched Shadow Layer */}
+                  <div className="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-[linear-gradient(45deg,#000000_25%,transparent_25%,transparent_50%,#000000_50%,#000000_75%,transparent_75%,transparent)] dark:bg-[linear-gradient(45deg,#ffffff_25%,transparent_25%,transparent_50%,#ffffff_50%,#ffffff_75%,transparent_75%,transparent)] bg-[length:4px_4px] opacity-0 transition-opacity duration-300 group-hover:opacity-20 rounded-sm" />
+
+                  {/* Main Card */}
+                  <div className="h-full relative border border-technical-200 dark:border-technical-400 p-6 transition-all duration-300 hover:border-technical-900 dark:hover:border-technical-800 group-hover:-translate-y-1 group-hover:-translate-x-1 bg-white dark:bg-neutral-950">
+                    <div className="absolute top-0 right-0 p-6">
+                      <ArrowUpRight size={20} className="text-technical-400 transition-transform duration-300 group-hover:text-technical-900 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    </div>
+
+                    <div className="flex flex-col h-full justify-between">
+                      <div className="p-2 w-fit bg-technical-100 rounded-sm text-technical-800 mb-4">
                         <Mail size={20} />
                       </div>
-                      <ArrowUpRight size={16} className="text-technical-400 group-hover:text-technical-900" />
+
+                      <div>
+                        <h4 className="font-bold text-lg text-technical-900 mb-1">Send Email</h4>
+                        <p className="text-sm text-technical-500">hey@knileshh.com</p>
+                      </div>
                     </div>
-                    <h4 className="font-bold text-technical-900">Send Email</h4>
-                    <p className="text-sm text-technical-500 mt-1">hey@knileshh.com</p>
                   </div>
                 </a>
               </div>
