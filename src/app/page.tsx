@@ -14,21 +14,23 @@ const experiences = [
   {
     company: "KalkiNi",
     role: "Backend Developer Intern",
-    period: "Present",
+    period: "Dec 2024 – Feb 2025",
     description: [
-      "Designing scalable microservices architecture using Node.js.",
-      "Optimizing database queries for high-volume data ingestion.",
-      "Implementing secure authentication flows."
+      "Developed and deployed the Boardly backend in 7 days, ensuring production stability.",
+      "Built Express.js backend with Multer + Cloudinary CDN, reducing media latency by 35%.",
+      "Implemented JWT auth middleware and route guards for secure session management.",
+      "Integrated Razorpay payments for subscription-based premium features."
     ]
   },
   {
-    company: "KeyNCoder",
-    role: "Full Stack Developer",
-    period: "2023 - 2024",
+    company: "KeyNCoders Pvt. Ltd.",
+    role: "Backend Developer Intern",
+    period: "Jul 2024 – Nov 2024",
     description: [
-      "Contributed to frontend architecture using React and Express.",
-      "Optimized CI/CD pipelines reducing deployment time by 20%.",
-      "Built RESTful APIs consumed by mobile and web clients."
+      "Built Dockerized video encoder converting to HLS (.m3u8), cutting buffering by 50%.",
+      "Improved API throughput via rate limiting and async I/O, achieving 2.4× faster responses.",
+      "Managed AWS S3 storage efficiently for video streaming workloads.",
+      "Implemented in-memory and temp storage handling for constrained Vercel Functions."
     ]
   }
 ];
@@ -128,12 +130,39 @@ export default function Home() {
               </div>
             </div>
 
+
+
             {/* About Section */}
-            <div className="mt-8">
+            <div className="mt-6">
               <h2 className="text-xl font-bold text-technical-900 mb-2">About</h2>
               <p className="text-technical-600 font-mono text-sm leading-relaxed text-justify hyphens-auto" lang="en">
                 I build robust backend systems and AI infrastructure with a genuine passion for quality. I love the complex heavy lifting of engineering and take pride in delivering end-to-end solutions that are precise, powerful, and built to endure.
               </p>
+
+              {/* Education */}
+              <div className="mt-8 space-y-3 font-mono text-sm">
+                {/* Label */}
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-xs text-technical-400 uppercase tracking-wider">Education</span>
+                  <div className="flex-grow border-b border-dotted border-technical-300"></div>
+                </div>
+                {/* MCA */}
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <span className="text-technical-900 font-medium">Master of Computer Applications</span>
+                    <span className="text-technical-600"> from VIT, Vellore, TN</span>
+                  </div>
+                  <span className="text-technical-500 text-xs shrink-0">8.81/10 • 2024–2026</span>
+                </div>
+                {/* BCA */}
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <span className="text-technical-800 font-medium">Bachelor of Computer Applications</span>
+                    <span className="text-technical-600"> from L.N.M.I, Patna, BR</span>
+                  </div>
+                  <span className="text-technical-500 text-xs shrink-0">8.15/10 • 2021–2024</span>
+                </div>
+              </div>
             </div>
           </header>
 
