@@ -113,10 +113,11 @@ export default function Home() {
                     className="group inline-flex items-center gap-2 text-technical-600 hover:text-technical-900 dark:text-technical-400 dark:hover:text-technical-50 transition-colors duration-300 focus:outline-none"
                   >
                     <FileText size={24} strokeWidth={1.5} />
-                    <span className="font-mono text-sm tracking-tight relative">
+                    <span className="font-mono text-base font-medium tracking-tight relative">
                       Resume
                       <span className="absolute left-0 -bottom-0.5 w-0 h-px bg-technical-900 dark:bg-technical-50 transition-all duration-300 group-hover:w-full"></span>
                     </span>
+                    <ArrowUpRight size={16} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:-translate-y-0.5 transition-all duration-300" />
                   </a>
 
                   <div className="h-6 w-px bg-technical-200 mx-2"></div>
