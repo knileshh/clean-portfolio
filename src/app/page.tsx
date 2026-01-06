@@ -93,11 +93,13 @@ export default function Home() {
 
               {/* Right: Details (Vertically Centered) */}
               <div className="text-center md:text-left space-y-3">
-                <div className="flex items-center justify-center md:justify-start gap-1.5">
-                  <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-technical-900 leading-none">
+                <div className="flex items-center justify-center md:justify-start relative">
+                  <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-technical-900 leading-none relative">
                     Nilesh Kumar
+                    <span className="absolute left-full top-1/2 -translate-y-1/2 ml-1.5 md:static md:translate-y-0 md:inline-block md:ml-2 align-middle">
+                      <BadgeCheck className="text-white fill-blue-500 flex-shrink-0" size={28} strokeWidth={1.5} />
+                    </span>
                   </h1>
-                  <BadgeCheck className="text-white fill-blue-500 flex-shrink-0 translate-y-1" size={28} strokeWidth={1.5} />
                 </div>
 
                 <RotatingTitle />
@@ -107,9 +109,13 @@ export default function Home() {
                   <a
                     href="/resume.pdf"
                     target="_blank"
-                    className="group relative inline-flex items-center px-4 py-2 border border-technical-200 bg-white text-technical-600 font-medium text-xs uppercase tracking-wider hover:border-technical-900 hover:text-technical-900 transition-all duration-300"
+                    className="group inline-flex items-center gap-2 text-technical-600 hover:text-technical-900 dark:text-technical-400 dark:hover:text-technical-50 transition-colors duration-300 focus:outline-none"
                   >
-                    <span>Resume</span>
+                    <FileText size={24} strokeWidth={1.5} />
+                    <span className="font-mono text-sm tracking-tight relative">
+                      Resume
+                      <span className="absolute left-0 -bottom-0.5 w-0 h-px bg-technical-900 dark:bg-technical-50 transition-all duration-300 group-hover:w-full"></span>
+                    </span>
                   </a>
 
                   <div className="h-6 w-px bg-technical-200 mx-2"></div>
