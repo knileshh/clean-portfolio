@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Lora } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { MicrosoftClarity } from "@/components/microsoft-clarity";
 import "./globals.css";
 
 const inter = Inter({
@@ -20,6 +21,7 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://knileshh.com"),
   title: "Nilesh Kumar | Backend Developer",
   description: "Backend Engineer & API Architect - Final year MCA student at VIT Vellore. Building scalable systems with Node.js and TypeScript.",
   openGraph: {
@@ -66,6 +68,7 @@ export default function RootLayout({
           disableTransitionOnChange={false}
         >
           {children}
+          <MicrosoftClarity />
         </ThemeProvider>
       </body>
     </html>
