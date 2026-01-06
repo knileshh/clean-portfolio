@@ -8,6 +8,7 @@ import { ProjectCard } from "@/components/project-card";
 import { SkillChart } from "@/components/skill-chart";
 import { VisitorCounter } from "@/components/visitor-counter";
 import { CalModalButton } from "@/components/cal-modal-button";
+import { RotatingTitle } from "@/components/rotating-title";
 
 const experiences = [
   {
@@ -86,7 +87,7 @@ export default function Home() {
                   <img
                     src="/avatar.png"
                     alt="Nilesh Kumar"
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out"
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-in-out"
                   />
                 </div>
               </div>
@@ -100,9 +101,7 @@ export default function Home() {
                   <BadgeCheck className="text-white fill-blue-500 flex-shrink-0 translate-y-1" size={28} strokeWidth={1.5} />
                 </div>
 
-                <p className="font-mono text-base text-technical-500">
-                  Backend Engineer
-                </p>
+                <RotatingTitle />
 
                 {/* Social Icons & Resume Row */}
                 <div className="flex items-center justify-center md:justify-start gap-4 pt-1">
@@ -131,10 +130,10 @@ export default function Home() {
             </div>
 
             {/* About Section */}
-            <div className="mt-8 max-w-2xl mx-auto md:mx-0 text-center md:text-left">
+            <div className="mt-8 text-center md:text-left">
               <h2 className="text-xl font-bold text-technical-900 mb-2">About</h2>
-              <p className="text-technical-600 font-sans text-base leading-snug max-w-xl">
-                Building scalable systems with Node.js and TypeScript. Obsessed with clean code, microservices, and high-performance APIs. Final year MCA student at VIT Vellore.
+              <p className="text-technical-600 font-sans text-base leading-snug">
+                I build robust backend systems and AI infrastructure with a genuine passion for quality. I love the complex heavy lifting of engineering and take pride in delivering end-to-end solutions that are precise, powerful, and built to endure.
               </p>
             </div>
           </header>
