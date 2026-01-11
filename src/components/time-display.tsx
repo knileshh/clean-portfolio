@@ -19,7 +19,6 @@ export function TimeDisplay() {
                 minute: "2-digit",
                 hour12: true,
             });
-
             setTime(formattedTime);
         };
 
@@ -31,6 +30,9 @@ export function TimeDisplay() {
 
     if (!time) return null; // Prevent hydration mismatch by not rendering initially on server
 
+    // Split time and period (AM/PM)
+    const [timeStr, period] = time.split(' ');
+
     return (
         <div className="flex flex-col items-start gap-1">
             <span className="font-mono text-[10px] text-technical-400 uppercase">
@@ -40,12 +42,13 @@ export function TimeDisplay() {
                 href="https://www.timeanddate.com/worldclock/india/bangalore"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-sm text-technical-900 dark:text-technical-50 tracking-wider hover:text-technical-600 dark:hover:text-technical-300 transition-colors group"
+                className="font-mono text-sm text-technical-900 tracking-wider hover:text-technical-600 transition-colors group"
             >
-                <span className="group-hover:underline decoration-technical-900 dark:decoration-technical-50 underline-offset-2">
-                    {time} <span className="text-[10px] ml-0.5 text-technical-500 dark:text-technical-400 font-medium">IST</span>
+                <span className="group-hover:underline decoration-technical-900 underline-offset-2">
+                    {timeStr}<span className="ml-0.5">{period}</span>
                 </span>
+                <span className="text-[10px] ml-0.5 text-technical-500 font-medium">IST</span>
             </a>
-        </div>
+        </div >
     );
 }
