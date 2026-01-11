@@ -110,12 +110,12 @@ export default function Home() {
                   <a
                     href="/resume.pdf"
                     target="_blank"
-                    className="group inline-flex items-center gap-2 text-technical-600 hover:text-technical-900 dark:text-technical-400 dark:hover:text-technical-50 transition-colors duration-300 focus:outline-none"
+                    className="group inline-flex items-center gap-2 text-technical-600 hover:text-technical-900 dark:text-technical-400 dark:hover:text-technical-900 transition-colors duration-300 focus:outline-none"
                   >
                     <FileText size={24} strokeWidth={1.5} />
                     <span className="font-mono text-base font-medium tracking-tight relative">
                       Resume
-                      <span className="absolute left-0 -bottom-0.5 w-0 h-px bg-technical-900 dark:bg-technical-50 transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute left-0 -bottom-0.5 w-0 h-px bg-technical-900 transition-all duration-300 group-hover:w-full"></span>
                     </span>
                     <ArrowUpRight size={16} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:-translate-y-0.5 transition-all duration-300" />
                   </a>
@@ -231,7 +231,7 @@ export default function Home() {
               <div className="grid md:grid-cols-2 gap-4 mb-8">
                 <CalModalButton calLink="knileshh" />
 
-                <a href="mailto:hey@knileshh.com" className="block group relative cursor-pointer focus:outline-none focus:ring-2 focus:ring-technical-900 focus:ring-offset-2 rounded-sm">
+                <a href="mailto:hey@knileshh.com" className="block group relative cursor-pointer focus:outline-none focus:ring-1 focus:ring-technical-900 focus:ring-offset-2 rounded-none">
                   {/* Hatched Shadow Layer */}
                   <div className="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-[linear-gradient(45deg,#000000_25%,transparent_25%,transparent_50%,#000000_50%,#000000_75%,transparent_75%,transparent)] dark:bg-[linear-gradient(45deg,#ffffff_25%,transparent_25%,transparent_50%,#ffffff_50%,#ffffff_75%,transparent_75%,transparent)] bg-[length:4px_4px] opacity-0 transition-opacity duration-300 group-hover:opacity-20" />
 
@@ -265,7 +265,7 @@ export default function Home() {
                 {/* Social Links */}
                 <div className="flex items-center justify-center gap-4">
                   <div className="relative group">
-                    <a href="https://linkedin.com/in/knileshh" target="_blank" className="flex items-center justify-center w-12 h-12 border border-technical-200 dark:border-technical-700 bg-white dark:bg-neutral-950 text-technical-600 hover:text-technical-900 dark:text-technical-400 dark:hover:text-technical-50 hover:border-technical-900 dark:hover:border-technical-100 transition-all duration-300">
+                    <a href="https://linkedin.com/in/knileshh" target="_blank" className="flex items-center justify-center w-12 h-12 border border-technical-200 bg-white dark:bg-neutral-950 text-technical-600 hover:text-technical-900 dark:text-technical-400 dark:hover:text-technical-900 hover:border-technical-900 dark:hover:border-technical-700 transition-all duration-300">
                       <Linkedin size={20} />
                     </a>
                     <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-20">
@@ -275,7 +275,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="relative group">
-                    <a href="https://x.com/knileshh" target="_blank" className="flex items-center justify-center w-12 h-12 border border-technical-200 dark:border-technical-700 bg-white dark:bg-neutral-950 text-technical-600 hover:text-technical-900 dark:text-technical-400 dark:hover:text-technical-50 hover:border-technical-900 dark:hover:border-technical-100 transition-all duration-300">
+                    <a href="https://x.com/knileshh" target="_blank" className="flex items-center justify-center w-12 h-12 border border-technical-200 bg-white dark:bg-neutral-950 text-technical-600 hover:text-technical-900 dark:text-technical-400 dark:hover:text-technical-900 hover:border-technical-900 dark:hover:border-technical-700 transition-all duration-300">
                       <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" aria-hidden="true">
                         <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
                       </svg>
@@ -287,7 +287,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="relative group">
-                    <a href="https://leetcode.com/u/knileshh/" target="_blank" className="flex items-center justify-center w-12 h-12 border border-technical-200 dark:border-technical-700 bg-white dark:bg-neutral-950 text-technical-600 hover:text-technical-900 dark:text-technical-400 dark:hover:text-technical-50 hover:border-technical-900 dark:hover:border-technical-100 transition-all duration-300">
+                    <a href="https://leetcode.com/u/knileshh/" target="_blank" className="flex items-center justify-center w-12 h-12 border border-technical-200 bg-white dark:bg-neutral-950 text-technical-600 hover:text-technical-900 dark:text-technical-400 dark:hover:text-technical-900 hover:border-technical-900 dark:hover:border-technical-700 transition-all duration-300">
                       <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" aria-hidden="true">
                         <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z" />
                       </svg>
@@ -299,7 +299,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="relative group">
-                    <a href="https://codeforces.com/profile/knileshh" target="_blank" className="flex items-center justify-center w-12 h-12 border border-technical-200 dark:border-technical-700 bg-white dark:bg-neutral-950 text-technical-600 hover:text-technical-900 dark:text-technical-400 dark:hover:text-technical-50 hover:border-technical-900 dark:hover:border-technical-100 transition-all duration-300">
+                    <a href="https://codeforces.com/profile/knileshh" target="_blank" className="flex items-center justify-center w-12 h-12 border border-technical-200 bg-white dark:bg-neutral-950 text-technical-600 hover:text-technical-900 dark:text-technical-400 dark:hover:text-technical-900 hover:border-technical-900 dark:hover:border-technical-700 transition-all duration-300">
                       <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" aria-hidden="true">
                         <path d="M4.5 7.5C5.328 7.5 6 8.172 6 9v10.5c0 .828-.672 1.5-1.5 1.5h-3C.672 21 0 20.328 0 19.5V9c0-.828.672-1.5 1.5-1.5h3zm9-4.5c.828 0 1.5.672 1.5 1.5v15c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5v-15c0-.828.672-1.5 1.5-1.5h3zm9 7.5c.828 0 1.5.672 1.5 1.5v7.5c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5v-7.5c0-.828.672-1.5 1.5-1.5h3z" />
                       </svg>

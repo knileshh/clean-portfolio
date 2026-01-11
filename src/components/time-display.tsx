@@ -45,7 +45,7 @@ export function TimeDisplay() {
                 className="font-mono text-sm text-technical-900 tracking-wider hover:text-technical-600 transition-colors group"
             >
                 <span className="group-hover:underline decoration-technical-900 underline-offset-2">
-                    {timeStr}<span className="ml-0.5">{period}</span>
+                    {timeStr} <span className="-ml-1">{period}</span>
                 </span>
                 <span className="text-[10px] ml-0.5 text-technical-500 font-medium">IST</span>
             </a>
